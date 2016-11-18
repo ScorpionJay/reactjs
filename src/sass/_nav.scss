@@ -1,0 +1,139 @@
+// /**
+// *	nav 
+// */
+
+ @import "_variables";
+
+
+// .nav {
+// 	width:100%;
+	
+
+
+// 	.header{
+// 		height:$nav-height;
+// 		background-color:$nav-li-bg;
+// 		text-align: center;
+// 		line-height:$nav-height;
+// 	}
+// 		.nav-ul {
+// 			width:100%;
+// 			height:$nav-height;
+// 			padding:0px;
+// 			position:fixed;
+// 			bottom: 0px;
+
+// 			li {
+// 					float:left;
+// 					width:$nav-li-width;
+// 					text-align: center;
+// 					line-height:$nav-line-height;
+// 					background-color:$nav-li-bg;
+// 					height:$nav-height;
+
+// 					a{
+// 						color:$nav-a-color;
+// 						font-size:$nav-a-font-size;
+// 						font-family: $nav-a-font-family;
+// 					}
+
+// 					.active {
+// 						color:$nav-active-color;
+// 					}
+// 				}
+// 		}
+// }
+
+
+/*nav*/
+nav {
+	/*padding: 0 50px;*/
+	background-color: #333;
+}
+nav ul {
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav ul li {
+	float: left;
+}
+
+nav ul li a {
+	display: inline-block;
+	color: #f2f2f2;
+	text-decoration: none;
+	padding: 14px 50px;
+	font-size: 17px;
+	font: small-caps normal 100% Constantia, 'Palatino Linotype', Palatino, Georgia, serif;
+}
+
+nav ul li a:hover {
+	background-color: #555
+}
+
+ .icon {
+	display: none;
+}
+
+@media screen and ( max-width:768px ) {
+/*	nav {
+		padding: 0px 0px 0px 20px;
+		background-color: #333;
+	}*/
+	nav li { display: none }
+	nav li.icon { 
+		float: left;
+		display: inline-block;
+	}
+	/*nav li.icon a { 
+		padding: 14px 20px;
+	}*/
+	ul.responsive li.icon {
+	    position: absolute;
+	    right: 0;
+	    top: 0;
+	}
+	ul.responsive li {
+		float: none;
+		display: inline;
+	}
+	ul.responsive li a {
+		display: block;
+		text-align: left;
+		padding: 14px 2px;
+	}
+}
+
+nav {
+		display:flex;
+		justify-content: flex-end
+	}
+
+.logoText{
+    font-size: 260%;
+    padding-bottom:15px;
+    font-family: Georgia, Palatino, 'Palatino Linotype', serif;
+    font-weight: bold;
+    color: #fff;
+}	
+
+/*new*/
+@media screen and ( max-width:768px ) {
+
+	.logoText{
+		    font-size: 200%;
+	}
+
+	.icon {
+		display: block;
+		align-self: center;
+	}
+
+	nav {
+		justify-content: flex-start;
+	}
+}
+
