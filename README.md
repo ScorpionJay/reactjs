@@ -1,8 +1,8 @@
-# one h5
+# reactjs demo
 
 ## What
 
-one h5 demo
+reactjs demo
 
 ## Use
 -	react
@@ -54,21 +54,3 @@ entry: {
 调用的地引入这个
 import 'whatwg-fetch'
 ~~~
-
-
-
-需要翻页，滚动拉取 分页 一打痛点 解决了 先设计数据模型
-
-{
-	total:10,
-	currentPage:1,
-	data: [
-		{id:1,title:'hello'},
-		{id:2,title:'java'}
-	]
-}
-
-webpack 介绍
-http://mp.weixin.qq.com/s?__biz=MzI0ODA2ODU2NQ==&mid=2651130161&idx=1&sn=224f145f4c87d32b239cf8fcb591d197&mpshare=1&scene=23&srcid=1125ATqOrDOVsM7qFuV0vr4h#rd
-webpack 优化
-http://mp.weixin.qq.com/s?__biz=MzI0ODA2ODU2NQ==&mid=2651129590&idx=1&sn=59cddf60674781b357dab7f0995b7fc3&scene=19#wechat_redirect
