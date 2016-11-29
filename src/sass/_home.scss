@@ -13,16 +13,17 @@
     margin: 0 20%;
 }
 
-.content2>div {
-	line-height: 34px;
-}
+
 
 
 @media screen and ( max-width:768px ) {
-
+    
+    .content1 {
+        padding: 0px;
+    }
 	.content2{
 		background-color: #fafafa;
-	    padding: 10px 50px;
+	    padding: 0px;
 	    margin: 0 0;
 	}
 }
@@ -73,7 +74,6 @@
     bottom: 0;
     overflow: auto;
     padding: 10px;
-    padding-left: 20px;
     color: #444;
     font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
     font-size: 16px;
@@ -130,4 +130,13 @@ blockquote {
     margin: 0;
     padding-left: 3em;
     border-left: 0.5em #eee solid;
+}
+
+
+
+@media screen and ( max-width:768px ) {
+    
+    .result-pane img {
+        max-width:100%
+    }
 }

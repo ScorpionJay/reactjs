@@ -41,7 +41,6 @@ export function fetchList(index){
 
 
 export function fetchListItemApi(id){
-	console.log('hack',id)
 	 return dispatch => {
 	 	//Config.article + '/'+id
 	 	fetch(Config.article +id,{

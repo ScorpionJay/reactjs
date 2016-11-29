@@ -12,7 +12,6 @@ export default class Nav extends Component {
 	}
 
 	showMenu(){
-		console.log('menu')
 		this.setState({nav:!this.state.nav})
 	}
 
@@ -52,7 +51,7 @@ const Styles = {
 		justifyContent: 'space-between'
 	},
 	logoDesc: {
-		fontSize: '.8em',
+		fontSize: '1.2em',
 	    color: 'silver',
 	    fontStyle: 'italic',
 	},

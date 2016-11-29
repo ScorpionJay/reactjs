@@ -1,8 +1,8 @@
-// const serviceUrl = 'http://localhost:18080/' //test url
-const serviceUrl = '' //test url
+const serviceUrl = '/' //测试url
+
 var con = {}
 
-if (process.env.ENV !== 'production') {
+if (process.env.NODE_ENV === 'production') {
   con = {
   initTab:'Home',
   loginUrl:serviceUrl,

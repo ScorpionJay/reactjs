@@ -5,15 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config config/webpack.dev.js --progress --port 8080 --profile --watch --content-base src/   --inline --hot",
-    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
-    "postinstall": "typings install"
+    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail"
   },
   "dependencies": {
-    "html-webpack-plugin": "^2.22.0",
-    "json-loader": "^0.5.4",
-    "react": "^15.3.0",
-    "react-dom": "^15.3.0",
-    "react-fa": "^4.1.2",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
     "react-markdown": "^2.4.2",
     "react-redux": "^4.4.5",
     "react-router": "^2.6.1",
@@ -29,23 +25,30 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-react-hmre": "^1.1.1",
     "babel-register": "^6.3.13",
+    "bundle-loader": "^0.5.4",
     "cross-env": "^1.0.7",
     "css-loader": "^0.23.1",
     "expect": "^1.8.0",
     "express": "^4.13.3",
     "extract-text-webpack-plugin": "^1.0.1",
+    "favicons-webpack-plugin": "0.0.7",
     "file-loader": "^0.8.5",
+    "html-minifier": "^3.2.3",
+    "html-webpack-plugin": "^2.22.0",
     "jsdom": "^5.6.1",
     "mocha": "^2.2.5",
     "node-libs-browser": "^0.5.2",
     "node-sass": "^3.7.0",
+    "open-browser-webpack-plugin": "0.0.3",
+    "react-addons-pure-render-mixin": "^15.4.0",
     "react-addons-test-utils": "^0.14.7",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "^1.9.11",
+    "webpack": "^1.13.3",
     "webpack-dev-middleware": "^1.2.0",
     "webpack-hot-middleware": "^2.9.1",
-    "webpack-merge": "^0.17.0"
+    "webpack-merge": "^0.17.0",
+    "json-loader": "^0.5.4"
   }
 }

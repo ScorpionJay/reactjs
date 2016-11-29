@@ -1,7 +1,7 @@
 import React , { Component } from 'react'
 
 import Bar from '../common/Bar'
-import {Icon} from 'react-fa'
+// import {Icon} from 'react-fa'
 
 import {Link } from 'react-router'
 

@@ -1,7 +1,7 @@
 import React , { Component } from 'react'
 import {Link } from 'react-router'
 
-import {Icon} from 'react-fa'
+// import {Icon} from 'react-fa'
 
 export default class ListItem extends Component{
 	render(){
@@ -21,12 +21,15 @@ const Styles = {
 		borderBottom: '1px solid #000',
 		marginBottom: '.125em',
 		padding:8,
-		backgroundColor:'#fafafa'
+		backgroundColor:'#fafafa',
+		marginLeft:'.35em',
+		marginRight:'.35em'
 	},
 	left: {
 		color: '#2ca6cb',
-		fontSize: '1.2em',
-		fontWeight:'bold'
+		fontSize: '1.7em',
+		fontWeight:'bold',
+		lineHeight: 2
 	},
 	right: {
 		color: '#817c7c',

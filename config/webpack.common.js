@@ -3,20 +3,22 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
+var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
+
 module.exports = {
-
-  
-
-    entry: {
-        app: [ 'babel-polyfill', './src/index.js' ]
-    },
+  // 入口
+  entry: {
+        app: [ 'babel-polyfill', './src/index.js' ],
+        vendor: ['react','react-dom','redux','react-redux','react-router','redux-thunk']
+  },
+  // 输出
   output: {
         path: ('./dev/'),
         filename: "app.js",
   },
   // 解决的文件
   resolve: {
-        extensions: ['', '.js','.jsx','.scss','.jpg']
+        extensions: ['', '.js','.jsx','.scss']
     },
   
   // 模块加载器
@@ -27,7 +29,10 @@ module.exports = {
             { test: /\.jsx|.js$/,exclude: /node_modules/, loader: 'babel-loader?presets[]=es2015&presets[]=react' },
             {
                 test: /\.(jpe?g|png|gif|svg|ico)$/,
-                loader: 'url?limit=8024&name=img/[name].[ext]'
+                loader: 'url',
+                query: {
+                    name: '[path][name].[ext]'
+                }
             },
             {
                 test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -35,7 +40,10 @@ module.exports = {
             },
             {
                 test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                loader: 'file-loader'
+                loaders:[ 'file-loader',
+                  {
+                    loader: 'image-webpack',
+                  }]
             },
             {
                 test: /\.json$/,
@@ -44,19 +52,8 @@ module.exports = {
         ]
     },
 
-    // Use the plugin to specify the resulting filename (and add needed behavior to the compiler)
     plugins: [
-        new ExtractTextPlugin("app.css"),
-        new HtmlWebpackPlugin({
-          title: 'one',
-          filename: 'index.html',
-          template: 'index.template.html',
-          //favicon: path.join(__dirname, 'favicon.ico')
-        }),
-        // new webpack.DllReferencePlugin({
-        //     context: __dirname,
-        //     manifest: require('./manifest.json'),
-        // }),
+        new webpack.optimize.CommonsChunkPlugin({name:'vendor', filename:'vendor.js'}),
     ]
 
 };

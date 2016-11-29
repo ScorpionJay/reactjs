@@ -1,17 +1,17 @@
 import React , { Component} from  'react'
 
-import {Icon} from 'react-fa'
+// import {Icon} from 'react-fa'
 
 export default class Bar extends Component {
 
 	_back(){
 		history.go(-1)
 	}
-
+//left = <Icon name="chevron-left" onClick={this._back}/>	
 	render() {
 		let left
 		if( this.props.left ){
-			left = <Icon name="chevron-left" onClick={this._back}/>			
+					
 		}
 
 		return (

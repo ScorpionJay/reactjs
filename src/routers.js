@@ -1,13 +1,15 @@
 import React , {Component } from 'react'
 import { Router, IndexRoute ,Route, hashHistory,Link,Redirect } from 'react-router'
 
-import {Icon} from 'react-fa'
+// import {Icon} from 'react-fa'
 
-import Home from './containers/Home'
-import ItemDetail from './containers/ItemDetail'
-import TodoItem from './containers/TodoItem'
-import Find from './containers/Find'
-import Me from './containers/Me'
+// import Home from './containers/Home'
+// import ItemDetail from './containers/ItemDetail'
+// import TodoItem from './containers/TodoItem'
+// import Find from './containers/Find'
+// import Me from './containers/Me'
+
+// import ItemDetail from './containers/demo'
 
 
 /* App */
@@ -27,28 +29,51 @@ const Routes = {
 	component: App,
 	indexRoute :{onEnter: (nextState, replace) => replace('/home')},
 	childRoutes: [
-		{ path: 'home', component: Home},
-		{ path: 'todoItem', component: TodoItem},
-		{ path: 'find', component: Find},
-		{ path: 'me', component: Me},
-		{ path: 'itemDetail/:id', component: ItemDetail},
+		{ path: 'home',  getComponent (nextState, cb) {
+			require.ensure([], (require)=>{
+				 cb(null, require('./containers/Home').default)
+			})
+		 }
+		},
+		// { path: 'todoItem', component: TodoItem},
+		{ path: 'find', getComponent (nextState, cb) {
+			require.ensure([], (require)=>{
+				 cb(null, require('./containers/Find').default)
+			})
+		 }
+		},
+		{ path: 'me', getComponent (nextState, cb) {
+			require.ensure([], (require)=>{
+				 cb(null, require('./containers/Me').default)
+			})
+		 }
+
+		},
+		{ path: 'itemDetail/:id', getComponent (nextState, cb) {
+			require.ensure([], (require)=>{
+				 cb(null, require('./containers/ItemDetail').default)
+			})
+		 }},
 		{
 			path: 'itemDetail',
-			component: ItemDetail,
+			getComponent (nextState, cb) {
+			require.ensure([], (require)=>{
+				 cb(null, require('./containers/ItemDetail').default)
+			})
+		 },
 			childRoutes : [{
 				path: 'itemDetal/:id',
 				onEnter: ({ params }, replace) => replace(`/itemDetail/${params.id}`)
 			}]
 		},
-		{
-			component: Home,
-			childRoutes: [{
-				path: 'itemDetail/:id',component:ItemDetail
-			}]
-		}
+		// {
+		// 	component: Home,
+		// 	childRoutes: [{
+		// 		path: 'itemDetail/:id',component:ItemDetail
+		// 	}]
+		// }
 	]
 }
-
 
 
 export default Routes
